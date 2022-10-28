@@ -61,49 +61,11 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QComboBox" name="playerCount">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>60</y>
-     <width>291</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="playersLabel">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>60</y>
-     <width>71</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Roboto Condensed</family>
-     <pointsize>13</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: royalblue;</string>
-   </property>
-   <property name="text">
-    <string>PLAYERS</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-   <property name="wordWrap">
-    <bool>false</bool>
-   </property>
-  </widget>
   <widget class="QLabel" name="player1Label">
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>90</y>
+     <y>80</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -131,7 +93,7 @@
    <property name="geometry">
     <rect>
      <x>180</x>
-     <y>90</y>
+     <y>80</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -159,7 +121,7 @@
    <property name="geometry">
     <rect>
      <x>330</x>
-     <y>90</y>
+     <y>80</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -187,7 +149,7 @@
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>90</y>
+     <y>80</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -367,7 +329,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Made by: DigitalSword Inc.</string>
+    <string>Made by: RapidSwords Inc.</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
