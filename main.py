@@ -1,4 +1,6 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+#!/bin/python
+
+from PyQt6 import QtCore, QtGui, QtWidgets
 from dice import roll, afterRoll
 
 numbers = [1, 2, 3, 4, 5, 6]
@@ -7,7 +9,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(600, 570)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
@@ -23,55 +25,48 @@ class Ui_Dialog(object):
         font.setWeight(75)
         self.mainLabel.setFont(font)
         self.mainLabel.setStyleSheet("color: royalblue;")
-        self.mainLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.mainLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.mainLabel.setWordWrap(False)
         self.mainLabel.setObjectName("mainLabel")
-        self.playerCount = QtWidgets.QComboBox(Dialog)
-        self.playerCount.setGeometry(QtCore.QRect(190, 60, 291, 22))
-        self.playerCount.setObjectName("playerCount")
-        self.playersLabel = QtWidgets.QLabel(Dialog)
-        self.playersLabel.setGeometry(QtCore.QRect(110, 60, 71, 21))
-        font = QtGui.QFont()
-        font.setFamily("Roboto Condensed")
-        font.setPointSize(13)
-        self.playersLabel.setFont(font)
-        self.playersLabel.setStyleSheet("color: royalblue;")
-        self.playersLabel.setAlignment(QtCore.Qt.AlignCenter)
-        self.playersLabel.setObjectName("playersLabel")
         self.player1Label = QtWidgets.QLabel(Dialog)
-        self.player1Label.setGeometry(QtCore.QRect(40, 90, 71, 21))
+        self.player1Label.setGeometry(QtCore.QRect(40, 80, 71, 21))
         font = QtGui.QFont()
         font.setFamily("Mistral")
         font.setPointSize(13)
         self.player1Label.setFont(font)
         self.player1Label.setStyleSheet("color: royalblue;")
-        self.player1Label.setAlignment(QtCore.Qt.AlignCenter)
+        self.player1Label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.player1Label.setWordWrap(False)
         self.player1Label.setObjectName("player1Label")
         self.player2Label = QtWidgets.QLabel(Dialog)
-        self.player2Label.setGeometry(QtCore.QRect(180, 90, 71, 21))
+        self.player2Label.setGeometry(QtCore.QRect(180, 80, 71, 21))
         font = QtGui.QFont()
         font.setFamily("Mistral")
         font.setPointSize(13)
         self.player2Label.setFont(font)
         self.player2Label.setStyleSheet("color: royalblue;")
-        self.player2Label.setAlignment(QtCore.Qt.AlignCenter)
+        self.player2Label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.player2Label.setWordWrap(False)
         self.player2Label.setObjectName("player2Label")
         self.player3Label = QtWidgets.QLabel(Dialog)
-        self.player3Label.setGeometry(QtCore.QRect(330, 90, 71, 21))
+        self.player3Label.setGeometry(QtCore.QRect(330, 80, 71, 21))
         font = QtGui.QFont()
         font.setFamily("Mistral")
         font.setPointSize(13)
         self.player3Label.setFont(font)
         self.player3Label.setStyleSheet("color: royalblue;")
-        self.player3Label.setAlignment(QtCore.Qt.AlignCenter)
+        self.player3Label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.player3Label.setWordWrap(False)
         self.player3Label.setObjectName("player3Label")
         self.player4Label = QtWidgets.QLabel(Dialog)
-        self.player4Label.setGeometry(QtCore.QRect(480, 90, 71, 21))
+        self.player4Label.setGeometry(QtCore.QRect(480, 80, 71, 21))
         font = QtGui.QFont()
         font.setFamily("Mistral")
         font.setPointSize(13)
         self.player4Label.setFont(font)
         self.player4Label.setStyleSheet("color: royalblue;")
-        self.player4Label.setAlignment(QtCore.Qt.AlignCenter)
+        self.player4Label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.player4Label.setWordWrap(False)
         self.player4Label.setObjectName("player4Label")
         self.listWidget = QtWidgets.QListWidget(Dialog)
         self.listWidget.setGeometry(QtCore.QRect(10, 110, 131, 391))
@@ -91,7 +86,7 @@ class Ui_Dialog(object):
         font.setFamily("Snap ITC")
         font.setPointSize(14)
         self.player1Roll.setFont(font)
-        self.player1Roll.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.player1Roll.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.player1Roll.setStyleSheet("color: royalblue;")
         self.player1Roll.setObjectName("player1Roll")
         self.player2Roll = QtWidgets.QPushButton(Dialog)
@@ -100,7 +95,7 @@ class Ui_Dialog(object):
         font.setFamily("Snap ITC")
         font.setPointSize(14)
         self.player2Roll.setFont(font)
-        self.player2Roll.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.player2Roll.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.player2Roll.setStyleSheet("color: royalblue;")
         self.player2Roll.setObjectName("player2Roll")
         self.player3Roll = QtWidgets.QPushButton(Dialog)
@@ -109,7 +104,7 @@ class Ui_Dialog(object):
         font.setFamily("Snap ITC")
         font.setPointSize(14)
         self.player3Roll.setFont(font)
-        self.player3Roll.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.player3Roll.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.player3Roll.setStyleSheet("color: royalblue;")
         self.player3Roll.setObjectName("player3Roll")
         self.player4Roll = QtWidgets.QPushButton(Dialog)
@@ -118,7 +113,7 @@ class Ui_Dialog(object):
         font.setFamily("Snap ITC")
         font.setPointSize(14)
         self.player4Roll.setFont(font)
-        self.player4Roll.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.player4Roll.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.player4Roll.setStyleSheet("color: royalblue;")
         self.player4Roll.setObjectName("player4Roll")
         self.label = QtWidgets.QLabel(Dialog)
@@ -127,25 +122,22 @@ class Ui_Dialog(object):
         font.setFamily("Roboto Condensed")
         font.setPointSize(12)
         self.label.setFont(font)
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
-
-        # My code starts
 
         self.player1Roll.clicked.connect(self.roll1)
         self.player2Roll.clicked.connect(self.roll2)
         self.player3Roll.clicked.connect(self.roll3)
         self.player4Roll.clicked.connect(self.roll4)
 
-
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Digital Dice"))
+        # Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.mainLabel.setText(_translate("Dialog", "DIGITAL DICE"))
-        self.playersLabel.setText(_translate("Dialog", "PLAYERS"))
         self.player1Label.setText(_translate("Dialog", "PLAYER 1"))
         self.player2Label.setText(_translate("Dialog", "PLAYER 2"))
         self.player3Label.setText(_translate("Dialog", "PLAYER 3"))
@@ -154,8 +146,7 @@ class Ui_Dialog(object):
         self.player2Roll.setText(_translate("Dialog", "ROLL"))
         self.player3Roll.setText(_translate("Dialog", "ROLL"))
         self.player4Roll.setText(_translate("Dialog", "ROLL"))
-        self.label.setText(_translate("Dialog", "Made by: DigitalSword Inc."))
-
+        self.label.setText(_translate("Dialog", "Made by: RapidSwords Inc."))
 
     def roll1(self):
         result = roll(numbers)
@@ -168,16 +159,19 @@ class Ui_Dialog(object):
         print(result)
         self.listWidget_2.addItem(afterRoll(result))
         self.listWidget_2.scrollToBottom()
+
     def roll3(self):
         result = roll(numbers)
         print(result)
         self.listWidget_3.addItem(afterRoll(result))
         self.listWidget_3.scrollToBottom()
+
     def roll4(self):
         result = roll(numbers)
         print(result)
         self.listWidget_4.addItem(afterRoll(result))
         self.listWidget_4.scrollToBottom()
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -185,4 +179,4 @@ if __name__ == "__main__":
     ui = Ui_Dialog()
     ui.setupUi(Dialog)
     Dialog.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
