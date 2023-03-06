@@ -1,31 +1,31 @@
 import random
 
 
-def roll(numbers):
+def roll(numbers: list) -> list:
 
 	rolled = [] 
 	selected = random.choice(numbers)
 	# print(selected)
 	rolled.append(selected)
 
-	if selected == 6:
-		selected2 = random.choice(numbers)
-		# print(selected2)
-		rolled.append(selected2)
+	if rolled[0] == 6:
+		rolled.append(random.choice(numbers))
+	else:
+		return rolled
 
-		if selected2 == 6:
-			selected3 = random.choice(numbers)
-			# print(selected3)
-			rolled.append(selected3)
-			if selected3 == 6:
-				# print("Turn Dismissed")
-				rolled = 0
+	if rolled[1] == 6:
+		rolled.append(random.choice(numbers))
+	else:
+		return rolled
+
+	if rolled[2] == 6:
+		rolled = [0]
 
 	return rolled
 
-def afterRoll(result):
+def afterRoll(result: list) -> str:
 
-	if result == 0:
+	if result[0] == 0:
 		t = f"Turn dismissed"
 	else:
 		t = " + ".join([str(r) for r in result])
