@@ -1,50 +1,38 @@
-from PyQt6 import QtWidgets, uic, QtCore, QtGui
-from dice import roll, afterRoll
 import os
+from PyQt6 import QtWidgets, uic
+from dice import roll, afterRoll
 
 
 class Ui_Dialog(QtWidgets.QDialog):
-	'''UI functions of Digital Dice'''
-	def __init__(self) -> None:
-		super(Ui_Dialog, self).__init__()
+    """UI functions of Digital Dice"""
 
-		uic.loadUi(os.path.join("GUI", "main.ui"), self)
-		self.setWindowTitle("Digital Dice")
+    def __init__(self) -> None:
+        super(Ui_Dialog, self).__init__()
 
-		self.numbers = [1, 2, 3, 4, 5, 6]
+        uic.loadUi(os.path.join("GUI", "main.ui"), self)
+        self.setWindowTitle("Digital Dice")
 
-		self.player1Roll.clicked.connect(self.roll1)
-		self.player2Roll.clicked.connect(self.roll2)
-		self.player3Roll.clicked.connect(self.roll3)
-		self.player4Roll.clicked.connect(self.roll4)
+        self.numbers = [1, 2, 3, 4, 5, 6]
 
-	def roll1(self):
-		result = roll(self.numbers)
-		print(result)
-		self.listWidget.addItem(afterRoll(result))
-		self.listWidget.scrollToBottom()
+        self.player1Roll.clicked.connect(lambda: self.main_roll(self.listWidget))
+        self.player2Roll.clicked.connect(lambda: self.main_roll(self.listWidget_2))
+        self.player3Roll.clicked.connect(lambda: self.main_roll(self.listWidget_3))
+        self.player4Roll.clicked.connect(lambda: self.main_roll(self.listWidget_4))
 
-	def roll2(self):
-		result = roll(self.numbers)
-		print(result)
-		self.listWidget_2.addItem(afterRoll(result))
-		self.listWidget_2.scrollToBottom()
+    def main_roll(self, listWidget) -> list:
+    	"""Rolls and update the list widget with new entry"""
 
-	def roll3(self):
-		result = roll(self.numbers)
-		print(result)
-		self.listWidget_3.addItem(afterRoll(result))
-		self.listWidget_3.scrollToBottom()
+        result = roll(self.numbers)
+        print(result)
 
-	def roll4(self):
-		result = roll(self.numbers)
-		print(result)
-		self.listWidget_4.addItem(afterRoll(result))
-		self.listWidget_4.scrollToBottom()
+        listWidget.addItem(afterRoll(result))
+        listWidget.scrollToBottom()
+
 
 if __name__ == "__main__":
-	import sys
-	app = QtWidgets.QApplication(sys.argv)
-	window = Ui_Dialog()
-	window.show()
-	app.exec()
+    import sys
+
+    app = QtWidgets.QApplication(sys.argv)
+    window = Ui_Dialog()
+    window.show()
+    app.exec()
