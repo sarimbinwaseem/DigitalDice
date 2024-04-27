@@ -1,6 +1,5 @@
 import random
 
-
 def roll(numbers: list) -> list:
 
 	rolled = [] 
