@@ -3,32 +3,26 @@ import random
 
 def roll(numbers: list) -> list:
 
-	rolled = [] 
-	selected = random.choice(numbers)
-	# print(selected)
-	rolled.append(selected)
+    rolled = []
 
-	if rolled[0] == 6:
-		rolled.append(random.choice(numbers))
-	else:
-		return rolled
+    for _ in range(3):
+        selected = random.choice(numbers)
+        rolled.append(selected)
+        if selected != 6:
+            break
 
-	if rolled[1] == 6:
-		rolled.append(random.choice(numbers))
-	else:
-		return rolled
+    # if all 3 are 6 so turn dismissed.
+    if all([n == 6 for n in rolled]):
+        return [0]
 
-	if rolled[2] == 6:
-		rolled = [0]
+    return rolled
 
-	return rolled
 
 def afterRoll(result: list) -> str:
 
-	if result[0] == 0:
-		t = f"Turn dismissed"
-	else:
-		t = " + ".join([str(r) for r in result])
+    if result[0] == 0:
+        t = "Turn dismissed"
+    else:
+        t = " + ".join([str(r) for r in result])
 
-	return t
-
+    return t
