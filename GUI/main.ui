@@ -44,7 +44,6 @@
     <font>
      <family>Snap ITC</family>
      <pointsize>26</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -55,7 +54,7 @@
     <string>DIGITAL DICE</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <property name="wordWrap">
     <bool>false</bool>
@@ -83,7 +82,7 @@
     <string>PLAYER 1</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <property name="wordWrap">
     <bool>false</bool>
@@ -111,7 +110,7 @@
     <string>PLAYER 2</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <property name="wordWrap">
     <bool>false</bool>
@@ -139,7 +138,7 @@
     <string>PLAYER 3</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <property name="wordWrap">
     <bool>false</bool>
@@ -167,7 +166,7 @@
     <string>PLAYER 4</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <property name="wordWrap">
     <bool>false</bool>
@@ -213,7 +212,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="player1Roll">
+  <widget class="QPushButton" name="player_1_roll">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -238,7 +237,7 @@
     <string>ROLL</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="player2Roll">
+  <widget class="QPushButton" name="player_2_roll">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -263,7 +262,7 @@
     <string>ROLL</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="player3Roll">
+  <widget class="QPushButton" name="player_3_roll">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -288,7 +287,7 @@
     <string>ROLL</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="player4Roll">
+  <widget class="QPushButton" name="player_4_roll">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -332,7 +331,7 @@
     <string>Made by: RapidSwords Inc.</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
  </widget>
